@@ -7,14 +7,17 @@ class Autor(models.Model):
     
 
 class Livro(models.Model):
-    titulo = models.CharField(max_length=100)
-    Isbn = models.CharField(max_length=30)
-    ano = models.IntegerField(max_length=10)
-    edicao = models.IntegerField(max_length=10)
+    Titulo = models.CharField(max_length=150)
+    paginas = models.IntegerField()
+    isbn = models.CharField(max_length=40)
+    Autores = models.CharField(max_length=500, blank=False)
+    editora = models.CharField(max_length=150)
     
-class Editorea(models.Model):
+    
+class Editora(models.Model):
    # id = models.IntegerField()
    descricao = models.CharField(max_length=100)
    telefone = models.IntegerField(15)
    
-   
+def __str__(self):
+    return self.titulo
