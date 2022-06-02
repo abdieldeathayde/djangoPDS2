@@ -5,19 +5,19 @@ class Autor(models.Model):
     nome = models.CharField(max_length=30)
     telefone = models.CharField(max_length=30)
     
+class Editora(models.Model):
+   # id = models.IntegerField()
+   descricao = models.CharField(max_length=100)
+   telefone = models.IntegerField(15)
 
 class Livro(models.Model):
     Titulo = models.CharField(max_length=150)
     paginas = models.IntegerField()
     isbn = models.CharField(max_length=40)
-    Autores = models.CharField(max_length=500, blank=False)
-    editora = models.CharField(max_length=150)
+    Autores = models.ManyToManyField(Autor)
+    editora = models.ForeignKey(Editora, on_delete= models.CASCADE)
     
     
-class Editora(models.Model):
-   # id = models.IntegerField()
-   descricao = models.CharField(max_length=100)
-   telefone = models.IntegerField(15)
    
-def __str__(self):
-    return self.titulo
+    def __str__(self):
+        return self.Titulo

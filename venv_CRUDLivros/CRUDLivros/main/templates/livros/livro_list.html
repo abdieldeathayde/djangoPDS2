@@ -1,0 +1,32 @@
+{% load static %}
+<div class="main">
+
+    <!-- todos_livros = Autor.objects.all() -->
+
+    <!-- <h1>Lista de Livros</h1> -->
+
+    {%if livro_list %}
+       
+            
+
+            <ul>
+            {% for livro in livro_list %}
+
+                <li><a href="{% url 'polls:detail' livro.id %}"> {{livro.Titulo}}</a>></a></li>
+            {{Autor.objects}}<br>
+                
+            {{livro.Titulo}} <br/>
+            {{livro.paginas}} <br/>
+            {{livro.isbn}} <br/>
+            {{livro.Autores}} <br/>
+            {{livro.editora}} <br/>
+            <hr/>
+        {% endfor %}
+        </ul>
+
+    {% else %}
+        <p>No items are available </p>
+
+    {% endif %}
+    </ul>
+</div>
