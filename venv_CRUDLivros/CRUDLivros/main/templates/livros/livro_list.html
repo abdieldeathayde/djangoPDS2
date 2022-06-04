@@ -1,32 +1,35 @@
 {% load static %}
-<div class="main">
-
-    <!-- todos_livros = Autor.objects.all() -->
-
-    <!-- <h1>Lista de Livros</h1> -->
-
-    {%if livro_list %}
-       
-            
-
-            <ul>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <meta http-equiv="X-UA-Compatible" content=""ie=edge"> -->
+        <title> Crud Django</title>
+     </head>
+     <body>
+         <ul>
+            <!-- <h1>Lista de Livros</h1> -->
             {% for livro in livro_list %}
+                <a href="{% url 'polls:detail' livro.id %}"> 
+                    <!-- {{livro.Titulo}}
+                    {{livro.paginas}} -->
 
-                <li><a href="{% url 'polls:detail' livro.id %}"> {{livro.Titulo}}</a>></a></li>
-            {{Autor.objects}}<br>
-                
-            {{livro.Titulo}} <br/>
-            {{livro.paginas}} <br/>
-            {{livro.isbn}} <br/>
-            {{livro.Autores}} <br/>
-            {{livro.editora}} <br/>
-            <hr/>
-        {% endfor %}
+                    <ul>
+                        <li>{{livro.Titulo}} <br/></li>
+                        <li>{{livro.paginas}} <br/></li>
+                        <li>{{livro.isbn}} <br/></li>
+                        <li>{{livro.Autores}} <br/></li>
+                        <li>{{livro.editora}} <br/></li>
+
+                    </ul>
+
+                    
+                </a>
+            {% endfor %}    
+            <!-- <hr/> -->
         </ul>
+         
 
-    {% else %}
-        <p>No items are available </p>
-
-    {% endif %}
-    </ul>
-</div>
+     </body>
+</html>
