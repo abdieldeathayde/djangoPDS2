@@ -23,6 +23,12 @@ def autor_list(request):
         print(autor)
     return render(request, 'autor/autor_list.html', {'lista de autores': lista_autores})
 
+def editora_list(request):
+    lista_editoras = Editora.objects.all()
+    for editora in lista_editoras:
+        print(editora)
+    return render (request, 'editora/editora_list.html', {'editora': lista_editoras})
+
 def inserirAutor(request):
     #autores = Autor.objects.all()
     #for autor in autores:
