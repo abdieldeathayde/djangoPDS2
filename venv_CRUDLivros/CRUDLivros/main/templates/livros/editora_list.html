@@ -9,7 +9,7 @@
 <body>
 
     {% for editora in edirora_list %}
-        <a href="{% url 'polls:detail' autor.id %}"> 
+        <a href="{% url 'polls:detail' editora.id %}"> 
             {{editora.descricao}}
             <li>{{editora.objects.all}}</li>
          </a>
